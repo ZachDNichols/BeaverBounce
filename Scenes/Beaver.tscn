@@ -8,6 +8,7 @@ radius = 480.0
 height = 1054.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.435, 0.435)
 slide_on_ceiling = false
 script = ExtResource("1_mffb2")
 
@@ -16,3 +17,5 @@ texture = ExtResource("1_wylnn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b0nim")
+
+[node name="Camera2D" type="Camera2D" parent="."]
