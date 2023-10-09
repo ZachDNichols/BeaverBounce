@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj7w4ha1ahgei"]
+[gd_scene load_steps=4 format=3 uid="uid://dj7w4ha1ahgei"]
 
+[ext_resource type="Script" path="res://Scenes/platform-broken.gd" id="1_1f782"]
 [ext_resource type="Texture2D" uid="uid://c3vvmflryp3md" path="res://Platform-Graphics/temp-log.png" id="1_xcstg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgv2i"]
@@ -7,6 +8,7 @@ size = Vector2(165, 19)
 
 [node name="Platform-Broken" type="AnimatableBody2D"]
 position = Vector2(299, 191)
+script = ExtResource("1_1f782")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
