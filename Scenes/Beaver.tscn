@@ -7,36 +7,36 @@
 radius = 470.422
 height = 1121.13
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bg8j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1so24"]
 atlas = ExtResource("2_p0wa1")
-region = Rect2(0, 0, 2264, 4706)
+region = Rect2(0, 0, 1132, 2353)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sidst"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq22k"]
 atlas = ExtResource("2_p0wa1")
-region = Rect2(2264, 0, 2264, 4706)
+region = Rect2(1132, 0, 1132, 2353)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5mrbn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_khdve"]
 atlas = ExtResource("2_p0wa1")
-region = Rect2(4528, 0, 2264, 4706)
+region = Rect2(2264, 0, 1132, 2353)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlb7p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg7s7"]
 atlas = ExtResource("2_p0wa1")
-region = Rect2(6792, 0, 2264, 4706)
+region = Rect2(3396, 0, 1132, 2353)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1re5o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3bg8j")
+"texture": SubResource("AtlasTexture_1so24")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sidst")
+"texture": SubResource("AtlasTexture_xq22k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5mrbn")
+"texture": SubResource("AtlasTexture_khdve")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dlb7p")
+"texture": SubResource("AtlasTexture_yg7s7")
 }],
 "loop": false,
 "name": &"Jump",
@@ -54,6 +54,6 @@ shape = SubResource("CapsuleShape2D_b0nim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9.19531, -9.19531)
-scale = Vector2(0.273464, 0.273464)
+scale = Vector2(0.546, 0.546)
 sprite_frames = SubResource("SpriteFrames_1re5o")
 animation = &"Jump"
