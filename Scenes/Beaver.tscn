@@ -1,19 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wilvpucmsam"]
+[gd_scene load_steps=9 format=3 uid="uid://c0wilvpucmsam"]
 
 [ext_resource type="Script" path="res://Scripts/Beaver.gd" id="1_mffb2"]
-[ext_resource type="Texture2D" uid="uid://brmqlyiwproxm" path="res://Graphics/beaver-placeholder.png" id="1_wylnn"]
+[ext_resource type="Texture2D" uid="uid://ve48f3el6h05" path="res://Graphics/Beaver/beaversheet.png" id="2_p0wa1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0nim"]
-radius = 480.0
-height = 1054.0
+radius = 470.422
+height = 1121.13
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1so24"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(0, 0, 1132, 2353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq22k"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(1132, 0, 1132, 2353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khdve"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(2264, 0, 1132, 2353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg7s7"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(3396, 0, 1132, 2353)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1re5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1so24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq22k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khdve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg7s7")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 10.0
+}]
+
+[node name="Beaver" type="CharacterBody2D"]
 scale = Vector2(0.435, 0.435)
 slide_on_ceiling = false
 script = ExtResource("1_mffb2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wylnn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.816092, 1)
 shape = SubResource("CapsuleShape2D_b0nim")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.19531, -9.19531)
+scale = Vector2(0.546, 0.546)
+sprite_frames = SubResource("SpriteFrames_1re5o")
+animation = &"Jump"
