@@ -4,17 +4,18 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -800.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
-func _process(_delta):
-	$"../Camera2D".position.y = $".".position.y
+@onready var sprite =  $AnimatedSprite2D
+var jumped = false
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	else:
-		velocity.y = JUMP_VELOCITY
+		jumped=false
+	elif !jumped:
+		Jump()
+
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -22,13 +23,20 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		if direction > 0:
-			$Sprite2D.flip_h = false
+			sprite.flip_h = false
 		elif direction < 0:
-			$Sprite2D.flip_h = true
+			sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	$"../Camera2D".position.y = $".".position.y
 	move_and_slide()
 	
-func Test():
-	print("test")
+
+func Jump():
+		sprite.play("Jump Prep")
+		await sprite.animation_finished
+		sprite.play("Jump")
+		velocity.y = JUMP_VELOCITY
+		jumped=true
+
