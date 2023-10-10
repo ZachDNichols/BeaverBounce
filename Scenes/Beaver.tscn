@@ -1,37 +1,45 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0wilvpucmsam"]
+[gd_scene load_steps=9 format=3 uid="uid://c0wilvpucmsam"]
 
 [ext_resource type="Script" path="res://Scripts/Beaver.gd" id="1_mffb2"]
-[ext_resource type="Texture2D" uid="uid://crvuahuc04u1f" path="res://Graphics/Beaver/Beaver4.png" id="2_lqrn1"]
-[ext_resource type="Texture2D" uid="uid://c6iu5d1l3lcmg" path="res://Graphics/Beaver/Beaver1.png" id="3_ftsi1"]
-[ext_resource type="Texture2D" uid="uid://d2rdx7ve72bbd" path="res://Graphics/Beaver/Beaver2.png" id="4_mvq1g"]
-[ext_resource type="Texture2D" uid="uid://d121mn2hu6wqv" path="res://Graphics/Beaver/Beaver3.png" id="5_60qv6"]
+[ext_resource type="Texture2D" uid="uid://ve48f3el6h05" path="res://Graphics/Beaver/beaversheet.png" id="2_p0wa1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0nim"]
 radius = 470.422
 height = 1121.13
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bg8j"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(0, 0, 2264, 4706)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sidst"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(2264, 0, 2264, 4706)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mrbn"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(4528, 0, 2264, 4706)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlb7p"]
+atlas = ExtResource("2_p0wa1")
+region = Rect2(6792, 0, 2264, 4706)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1re5o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lqrn1")
-}],
-"loop": true,
-"name": &"Jump",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ftsi1")
+"texture": SubResource("AtlasTexture_3bg8j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_mvq1g")
+"texture": SubResource("AtlasTexture_sidst")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_60qv6")
+"texture": SubResource("AtlasTexture_5mrbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlb7p")
 }],
 "loop": false,
-"name": &"Jump Prep",
+"name": &"Jump",
 "speed": 10.0
 }]
 
@@ -48,6 +56,4 @@ shape = SubResource("CapsuleShape2D_b0nim")
 position = Vector2(9.19531, -9.19531)
 scale = Vector2(0.273464, 0.273464)
 sprite_frames = SubResource("SpriteFrames_1re5o")
-animation = &"Jump Prep"
-frame = 2
-frame_progress = 1.0
+animation = &"Jump"
