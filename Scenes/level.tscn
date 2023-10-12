@@ -12,11 +12,12 @@ size = Vector2(1142.5, 19)
 [node name="Pin" type="PinJoint2D" parent="."]
 z_index = 2
 z_as_relative = false
-position = Vector2(-102, 132)
+position = Vector2(-101, 186)
 rotation = 3.11957
 scale = Vector2(2.51504, -2.93006)
 node_a = NodePath("../Beaver")
 node_b = NodePath("../Tail")
+bias = 0.9
 
 [node name="Beaver" parent="." instance=ExtResource("1_acer0")]
 position = Vector2(-101, 61)
@@ -30,7 +31,7 @@ shape = SubResource("RectangleShape2D_djmww")
 
 [node name="Icon" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-92, 67)
+position = Vector2(-89, 78)
 scale = Vector2(7.17969, 4.55469)
 texture = ExtResource("2_celve")
 
@@ -39,4 +40,4 @@ position = Vector2(-92, 67)
 scale = Vector2(7.17969, 4.55469)
 
 [node name="Tail" parent="." instance=ExtResource("3_6blpo")]
-position = Vector2(-100, 187)
+position = Vector2(-102, 255)
