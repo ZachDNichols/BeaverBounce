@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cys8vd32skigc"]
+
+[ext_resource type="Texture2D" uid="uid://bxv0fyg61ghtd" path="res://Graphics/Beaver/Beaver.png" id="1_ubxla"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttx73"]
+radius = 97.2894
+height = 500.346
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.495045, -0.538816)
+shape = SubResource("CapsuleShape2D_ttx73")
+
+[node name="Tail" type="Sprite2D" parent="CollisionShape2D"]
+z_index = -1
+position = Vector2(-3.02527, 133.426)
+rotation = 3.14159
+scale = Vector2(0.179242, 0.194514)
+texture = ExtResource("1_ubxla")
+hframes = 5
+frame = 4

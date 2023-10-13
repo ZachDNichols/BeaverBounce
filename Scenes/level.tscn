@@ -11,31 +11,19 @@ size = Vector2(1142.5, 19)
 
 [node name="Level" type="Node2D"]
 
-[node name="Platform-Broken" parent="." instance=ExtResource("1_4x4ps")]
-position = Vector2(235, 245)
-
-[node name="Platform-moving" parent="." instance=ExtResource("3_s0yih")]
-position = Vector2(-193, -73)
-
-[node name="Platform-Static" parent="." instance=ExtResource("4_3rjh0")]
-position = Vector2(-447, 252)
-
-[node name="Beaver" parent="." instance=ExtResource("1_acer0")]
-position = Vector2(-101, 61)
-scale = Vector2(0.28, 0.28)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-105.25, 380)
 shape = SubResource("RectangleShape2D_djmww")
 
 [node name="Icon" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-92, 67)
+position = Vector2(-89, 78)
 scale = Vector2(7.17969, 4.55469)
 texture = ExtResource("2_celve")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-92, 67)
 scale = Vector2(7.17969, 4.55469)
+
+[node name="Beaver" parent="." instance=ExtResource("1_acer0")]
+position = Vector2(-182, 119)

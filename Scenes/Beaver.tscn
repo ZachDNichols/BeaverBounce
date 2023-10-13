@@ -1,19 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wilvpucmsam"]
+[gd_scene load_steps=10 format=3 uid="uid://c0wilvpucmsam"]
 
 [ext_resource type="Script" path="res://Scripts/Beaver.gd" id="1_mffb2"]
-[ext_resource type="Texture2D" uid="uid://brmqlyiwproxm" path="res://Graphics/beaver-placeholder.png" id="1_wylnn"]
+[ext_resource type="Texture2D" uid="uid://bxv0fyg61ghtd" path="res://Graphics/Beaver/Beaver.png" id="2_dk66q"]
+[ext_resource type="PackedScene" uid="uid://cys8vd32skigc" path="res://Scenes/Tail.tscn" id="3_nww07"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0nim"]
-radius = 480.0
-height = 1054.0
+radius = 470.422
+height = 1121.13
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cyfa"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(0, 0, 1999, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcjiq"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(2001, 0, 1999, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpqfk"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(4002, 0, 1999, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3osm"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(6003, 0, 2001, 4000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21tw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cyfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcjiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpqfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3osm")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 8.0
+}]
+
+[node name="Beaver" type="CharacterBody2D"]
 scale = Vector2(0.435, 0.435)
 slide_on_ceiling = false
 script = ExtResource("1_mffb2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wylnn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.816092, 1)
 shape = SubResource("CapsuleShape2D_b0nim")
+
+[node name="Beaver" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.1954, -27.5862)
+scale = Vector2(0.271913, 0.271912)
+sprite_frames = SubResource("SpriteFrames_21tw1")
+animation = &"Jump"
+
+[node name="Tail" parent="." instance=ExtResource("3_nww07")]
+position = Vector2(-6.89655, 425.287)
+collision_layer = 0
+collision_mask = 0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-4.5977, 174.713)
+node_a = NodePath("..")
+node_b = NodePath("../Tail")
