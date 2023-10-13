@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://c18o152rvqxjj"]
+
+[ext_resource type="Texture2D" uid="uid://c3vvmflryp3md" path="res://Platform-Graphics/temp-log.png" id="1_gjpu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qesv4"]
+size = Vector2(165, 19)
+
+[sub_resource type="Animation" id="Animation_5bium"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_70hcy"]
+resource_name = "move_left_right"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(360, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pduws"]
+_data = {
+"RESET": SubResource("Animation_5bium"),
+"move_left_right": SubResource("Animation_70hcy")
+}
+
+[node name="Platform-moving" type="Node2D"]
+
+[node name="platform-moving" type="AnimatableBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platform-moving"]
+position = Vector2(-6.99999, -16.5)
+scale = Vector2(7.125, 2.03125)
+texture = ExtResource("1_gjpu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform-moving"]
+position = Vector2(5.5, -20.5)
+shape = SubResource("RectangleShape2D_qesv4")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform-moving"]
+autoplay = "move_left_right"
+libraries = {
+"": SubResource("AnimationLibrary_pduws")
+}

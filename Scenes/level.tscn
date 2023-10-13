@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgcbv6wa3gwvg"]
+[gd_scene load_steps=7 format=3 uid="uid://dgcbv6wa3gwvg"]
 
+[ext_resource type="PackedScene" uid="uid://dj7w4ha1ahgei" path="res://Scenes/platform-broken.tscn" id="1_4x4ps"]
 [ext_resource type="PackedScene" uid="uid://c0wilvpucmsam" path="res://Scenes/Beaver.tscn" id="1_acer0"]
 [ext_resource type="Texture2D" uid="uid://bkscuv0ft7j7s" path="res://icon.svg" id="2_celve"]
+[ext_resource type="PackedScene" uid="uid://c18o152rvqxjj" path="res://Scenes/platform-moving.tscn" id="3_s0yih"]
+[ext_resource type="PackedScene" uid="uid://diol0hxtpbwp5" path="res://Scenes/platform-static.tscn" id="4_3rjh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djmww"]
 size = Vector2(1142.5, 19)
 
 [node name="Level" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-105.25, 380)
