@@ -12,7 +12,7 @@ size = Vector2(1142.5, 19)
 [node name="Pin" type="PinJoint2D" parent="."]
 z_index = 2
 z_as_relative = false
-position = Vector2(-101, 186)
+position = Vector2(-104, 121)
 rotation = 3.11957
 scale = Vector2(2.51504, -2.93006)
 node_a = NodePath("../Beaver")
@@ -40,4 +40,6 @@ position = Vector2(-92, 67)
 scale = Vector2(7.17969, 4.55469)
 
 [node name="Tail" parent="." instance=ExtResource("3_6blpo")]
-position = Vector2(-102, 255)
+position = Vector2(-104, 192)
+collision_layer = 0
+collision_mask = 0

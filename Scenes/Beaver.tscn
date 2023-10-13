@@ -1,12 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wilvpucmsam"]
+[gd_scene load_steps=9 format=3 uid="uid://c0wilvpucmsam"]
 
 [ext_resource type="Script" path="res://Scripts/Beaver.gd" id="1_mffb2"]
+[ext_resource type="Texture2D" uid="uid://bxv0fyg61ghtd" path="res://Graphics/Beaver/Beaver.png" id="2_dk66q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0nim"]
 radius = 470.422
 height = 1121.13
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cyfa"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(0, 0, 1999, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcjiq"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(2001, 0, 1999, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpqfk"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(4002, 0, 1999, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3osm"]
+atlas = ExtResource("2_dk66q")
+region = Rect2(6003, 0, 2001, 4000)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_21tw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cyfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcjiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpqfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3osm")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 8.0
+}]
 
 [node name="Beaver" type="CharacterBody2D"]
 scale = Vector2(0.435, 0.435)
@@ -18,4 +53,7 @@ scale = Vector2(0.816092, 1)
 shape = SubResource("CapsuleShape2D_b0nim")
 
 [node name="Beaver" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.1954, -27.5862)
+scale = Vector2(0.271913, 0.271912)
 sprite_frames = SubResource("SpriteFrames_21tw1")
+animation = &"Jump"
