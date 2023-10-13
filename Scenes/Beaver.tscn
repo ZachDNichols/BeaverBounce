@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0wilvpucmsam"]
+[gd_scene load_steps=10 format=3 uid="uid://c0wilvpucmsam"]
 
 [ext_resource type="Script" path="res://Scripts/Beaver.gd" id="1_mffb2"]
 [ext_resource type="Texture2D" uid="uid://bxv0fyg61ghtd" path="res://Graphics/Beaver/Beaver.png" id="2_dk66q"]
+[ext_resource type="PackedScene" uid="uid://cys8vd32skigc" path="res://Scenes/Tail.tscn" id="3_nww07"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0nim"]
 radius = 470.422
@@ -57,3 +58,13 @@ position = Vector2(-9.1954, -27.5862)
 scale = Vector2(0.271913, 0.271912)
 sprite_frames = SubResource("SpriteFrames_21tw1")
 animation = &"Jump"
+
+[node name="Tail" parent="." instance=ExtResource("3_nww07")]
+position = Vector2(-6.89655, 425.287)
+collision_layer = 0
+collision_mask = 0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-4.5977, 174.713)
+node_a = NodePath("..")
+node_b = NodePath("../Tail")

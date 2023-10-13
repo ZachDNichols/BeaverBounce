@@ -1,27 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgcbv6wa3gwvg"]
+[gd_scene load_steps=4 format=3 uid="uid://dgcbv6wa3gwvg"]
 
 [ext_resource type="PackedScene" uid="uid://c0wilvpucmsam" path="res://Scenes/Beaver.tscn" id="1_acer0"]
 [ext_resource type="Texture2D" uid="uid://bkscuv0ft7j7s" path="res://icon.svg" id="2_celve"]
-[ext_resource type="PackedScene" uid="uid://cys8vd32skigc" path="res://Scenes/Tail.tscn" id="3_6blpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djmww"]
 size = Vector2(1142.5, 19)
 
 [node name="Level" type="Node2D"]
-
-[node name="Pin" type="PinJoint2D" parent="."]
-z_index = 2
-z_as_relative = false
-position = Vector2(-104, 121)
-rotation = 3.11957
-scale = Vector2(2.51504, -2.93006)
-node_a = NodePath("../Beaver")
-node_b = NodePath("../Tail")
-bias = 0.9
-
-[node name="Beaver" parent="." instance=ExtResource("1_acer0")]
-position = Vector2(-101, 61)
-scale = Vector2(0.28, 0.28)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -39,7 +24,5 @@ texture = ExtResource("2_celve")
 position = Vector2(-92, 67)
 scale = Vector2(7.17969, 4.55469)
 
-[node name="Tail" parent="." instance=ExtResource("3_6blpo")]
-position = Vector2(-104, 192)
-collision_layer = 0
-collision_mask = 0
+[node name="Beaver" parent="." instance=ExtResource("1_acer0")]
+position = Vector2(-182, 119)

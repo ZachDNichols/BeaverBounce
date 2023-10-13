@@ -10,7 +10,7 @@ height = 500.346
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 3.14159
-scale = Vector2(0.330526, -0.359751)
+scale = Vector2(0.495045, -0.538816)
 shape = SubResource("CapsuleShape2D_ttx73")
 
 [node name="Tail" type="Sprite2D" parent="CollisionShape2D"]
