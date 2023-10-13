@@ -1,19 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgcbv6wa3gwvg"]
+[gd_scene load_steps=4 format=3 uid="uid://dgcbv6wa3gwvg"]
 
-[ext_resource type="PackedScene" uid="uid://dj7w4ha1ahgei" path="res://Scenes/platform-broken.tscn" id="1_4x4ps"]
 [ext_resource type="PackedScene" uid="uid://c0wilvpucmsam" path="res://Scenes/Beaver.tscn" id="1_acer0"]
 [ext_resource type="Texture2D" uid="uid://bkscuv0ft7j7s" path="res://icon.svg" id="2_celve"]
-[ext_resource type="PackedScene" uid="uid://c18o152rvqxjj" path="res://Scenes/platform-moving.tscn" id="3_s0yih"]
-[ext_resource type="PackedScene" uid="uid://diol0hxtpbwp5" path="res://Scenes/platform-static.tscn" id="4_3rjh0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_djmww"]
-size = Vector2(1142.5, 19)
+[ext_resource type="PackedScene" uid="uid://diol0hxtpbwp5" path="res://Scenes/platform-static.tscn" id="3_unjww"]
 
 [node name="Level" type="Node2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-105.25, 380)
-shape = SubResource("RectangleShape2D_djmww")
 
 [node name="Icon" type="Sprite2D" parent="."]
 z_index = -1
@@ -27,3 +18,6 @@ scale = Vector2(7.17969, 4.55469)
 
 [node name="Beaver" parent="." instance=ExtResource("1_acer0")]
 position = Vector2(-182, 119)
+
+[node name="Platform-Static" parent="." instance=ExtResource("3_unjww")]
+position = Vector2(-206, 408)
