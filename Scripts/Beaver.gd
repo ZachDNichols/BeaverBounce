@@ -4,7 +4,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -800.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var sprite =  $AnimatedSprite2D
+@onready var sprite = $Beaver
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -12,8 +12,6 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	elif move_and_slide():
 		Jump()
-
-		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
