@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bxv0fyg61ghtd" path="res://Graphics/Beaver/Beaver.png" id="2_dk66q"]
 [ext_resource type="PackedScene" uid="uid://cys8vd32skigc" path="res://Scenes/Tail.tscn" id="3_nww07"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0nim"]
-radius = 470.422
-height = 1121.13
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcmty"]
+size = Vector2(518.31, 383.908)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cyfa"]
 atlas = ExtResource("2_dk66q")
@@ -46,12 +45,13 @@ animations = [{
 
 [node name="Beaver" type="CharacterBody2D"]
 scale = Vector2(0.435, 0.435)
-slide_on_ceiling = false
 script = ExtResource("1_mffb2")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-18.3908, 254.023)
 scale = Vector2(0.816092, 1)
-shape = SubResource("CapsuleShape2D_b0nim")
+shape = SubResource("RectangleShape2D_mcmty")
 
 [node name="Beaver" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9.1954, -27.5862)
@@ -63,6 +63,8 @@ animation = &"Jump"
 position = Vector2(-6.89655, 425.287)
 collision_layer = 0
 collision_mask = 0
+collision_priority = 2.08165e-12
+sleeping = true
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(-4.5977, 174.713)
