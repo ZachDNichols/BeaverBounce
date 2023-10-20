@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cys8vd32skigc" path="res://Scenes/Tail.tscn" id="3_nww07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcmty"]
-size = Vector2(518.31, 383.908)
+size = Vector2(580.282, 383.908)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cyfa"]
 atlas = ExtResource("2_dk66q")
@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Jump",
-"speed": 8.0
+"speed": 18.0
 }]
 
 [node name="Beaver" type="CharacterBody2D"]
@@ -49,7 +49,7 @@ script = ExtResource("1_mffb2")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-18.3908, 254.023)
+position = Vector2(-6.89655, 254.023)
 scale = Vector2(0.816092, 1)
 shape = SubResource("RectangleShape2D_mcmty")
 

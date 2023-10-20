@@ -23,20 +23,20 @@ position = Vector2(-182, 30)
 [node name="Sprite2D" parent="." instance=ExtResource("3_unjww")]
 position = Vector2(-177, 293)
 
+[node name="Sprite2D2" parent="." instance=ExtResource("3_unjww")]
+position = Vector2(-177, -21)
+
 [node name="Sprite2D3" parent="." instance=ExtResource("3_unjww")]
-position = Vector2(-177, -176)
+position = Vector2(-175, -228)
 
 [node name="Sprite2D4" parent="." instance=ExtResource("3_unjww")]
-position = Vector2(-173, -332)
+position = Vector2(-175, -399)
 
 [node name="Sprite2D5" parent="." instance=ExtResource("3_unjww")]
-position = Vector2(-179, -505)
+position = Vector2(-180, -627)
 
 [node name="Sprite2D6" parent="." instance=ExtResource("3_unjww")]
-position = Vector2(2.08165e-12, -698)
+position = Vector2(-180, -627)
 
-[node name="Sprite2D2" parent="." instance=ExtResource("3_unjww")]
-position = Vector2(-172, -16)
-
-[node name="Node2D" parent="." instance=ExtResource("4_6nnh6")]
+[node name="Spawner" parent="." instance=ExtResource("4_6nnh6")]
 position = Vector2(2.08165e-12, 2.08165e-12)
